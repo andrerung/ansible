@@ -22,4 +22,3 @@
       group:
         name: db2gfenc
         state: absent
-		
