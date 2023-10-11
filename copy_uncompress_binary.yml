@@ -2,10 +2,8 @@
 - name: Copy and Uncompress Gzip File
   hosts: all
   become: yes
+
   tasks:
-    - name: Include Vault-encrypted variable file
-      include_vars:
-        file: /home/rung/ansible/my_become_pass.yml
  
     - name: Create DB2 Directory
       file:
@@ -24,9 +22,3 @@
         src: /tmp/db2/special_33830_v11.5.8_linuxx64_universal_fixpack.tar.gz
         dest: /tmp/db2
         remote_src: yes
-        
-#    - name: Uncompress the gzip file
-#      command: gunzip /tmp/db2/special_33830_v11.5.8_linuxx64_universal_fixpack.tar.gz
-
-#    - name: Untar the gzip file
-#      command: tar -xvf /tmp/db2/special_33830_v11.5.8_linuxx64_universal_fixpack.tar      
