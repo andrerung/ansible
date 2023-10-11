@@ -1,0 +1,25 @@
+---
+- name: Remove DB2 Users and Group on Red Hat Linux
+  hosts: ALL
+  become: yes
+  tasks:
+    - name: Remove user db2inst1
+      user:
+        name: db2inst1
+        state: absent
+
+    - name: Remove user db2fenc1
+      user:
+        name: db2fenc1
+        state: absent
+
+    - name: Remove the group "db2iadm"
+      group:
+        name: db2iadm
+        state: absent
+
+    - name: Remove the group "db2gfenc"
+      group:
+        name: db2gfenc
+        state: absent
+		
