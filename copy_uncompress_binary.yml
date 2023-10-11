@@ -15,7 +15,7 @@
       copy:
         src: /mnt/c/Users/rung/Downloads/special_33830_v11.5.8_linuxx64_universal_fixpack.tar.gz
         dest: /tmp/db2/special_33830_v11.5.8_linuxx64_universal_fixpack.tar.gz
-        remote_src: yes
+        remote_src: no
 
     - name: Uncompress the gzip file
       command: gunzip /tmp/db2/special_33830_v11.5.8_linuxx64_universal_fixpack.tar.gz
