@@ -1,0 +1,26 @@
+---
+- name: Create DB2 Users and Groups on Red Hat Linux
+  hosts: ALL
+  become: yes
+  tasks:
+    - name: Create a group named "db2iadm"
+      group:
+        name: db2iadm
+        state: present
+
+    - name: Create user db2inst1 and associate with the "db2iadm" group
+      user:
+        name: db2inst1
+        state: present
+        shell: /bin/bash
+        createhome: yes
+        groups: db2iadm  # Associates user db2inst1 with the "db2iadm" group
+
+    - name: Create user db2fenc1 and associate with the "db2gfenc" group
+      user:
+        name: db2fenc1
+        state: present
+        shell: /bin/bash
+        createhome: yes
+        groups: db2gfenc  # Associates user db2fenc1 with the "db2gfenc" group
+
