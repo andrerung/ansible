@@ -1,6 +1,6 @@
 ---
 - name: Remove DB2 Users and Group on Red Hat Linux
-  hosts: ALL
+  hosts: all
   become: yes
   tasks:
     - name: Remove user db2inst1
