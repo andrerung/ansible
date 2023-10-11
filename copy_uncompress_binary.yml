@@ -3,6 +3,11 @@
   hosts: all
   become: yes
   gather_facts: True
+  tasks:
+    - name: Include Vault-encrypted variable file
+      include_vars:
+        file: /home/rung/ansible/my_become_pass.yml
+
   pre_tasks:
     - name: Create DB2 Directory
       file:
