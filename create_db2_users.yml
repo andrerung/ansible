@@ -19,7 +19,7 @@
         state: present
         shell: /bin/bash
         createhome: yes
-        groups: db2iadm  # Associates user db2inst1 with the "db2iadm" group
+        group: db2iadm  # Associates user db2inst1 with the "db2iadm" group
 
     - name: Create user db2fenc1 and associate with the "db2gfenc" group
       user:
@@ -27,5 +27,5 @@
         state: present
         shell: /bin/bash
         createhome: yes
-        groups: db2gfenc  # Associates user db2fenc1 with the "db2gfenc" group
+        group: db2gfenc  # Associates user db2fenc1 with the "db2gfenc" group
 
