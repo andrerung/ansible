@@ -1,6 +1,6 @@
 ---
 - name: Create DB2 Users and Groups on Red Hat Linux
-  hosts: ALL
+  hosts: all
   become: yes
   tasks:
     - name: Create a group named "db2iadm"
