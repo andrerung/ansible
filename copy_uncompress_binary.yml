@@ -1,0 +1,21 @@
+---
+- name: Copy and Uncompress Gzip File
+  hosts: all
+  become: yes
+  gather_facts: True
+  pre_tasks:
+    - name: Create DB2 Directory
+      file:
+        path: /tmp/db2
+        state: directory
+        mode: 0755
+          
+  tasks:
+    - name: Copy the gzip file to the target host
+      copy:
+        src: /mnt/c/Users/rung/Downloads/special_33830_v11.5.8_linuxx64_universal_fixpack.tar.gz
+        dest: /tmp/db2/special_33830_v11.5.8_linuxx64_universal_fixpack.tar.gz
+        remote_src: yes
+
+    - name: Uncompress the gzip file
+      command: gunzip /tmp/db2/special_33830_v11.5.8_linuxx64_universal_fixpack.tar.gz
